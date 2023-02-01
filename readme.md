@@ -14,7 +14,7 @@ For example you could use the alexa top x list to generate valid data. \
 `wget -q http://s3.amazonaws.com/alexa-static/top-1m.csv.zip;unzip top-1m.csv.zip; awk -F ',' '{print $2}' top-1m.csv|head -10000 > top-10000.txt; rm top-1m.csv*`\
 
 Now we have a list of domains, lets put https in front of the domain \
-`sed 's/^/https:\/\//' top-10000.txt > ttps.txt`\
+`sed 's/^/https:\/\//' top-10000.txt > https.txt`\
 
 And run the script:\
 `./generator.py -f https.txt`
